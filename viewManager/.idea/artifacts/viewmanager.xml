@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="viewmanager">
+    <output-path>$PROJECT_DIR$/out/artifacts/viewmanager</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="paramFile" value="" />
+        <option name="title" value="viewmanager" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="module-output" name="viewManager" />
+        <element id="library" level="project" name="com.googlecode.json-simple:json-simple:1.1.1" />
+        <element id="library" level="project" name="com.sun.jersey:jersey-client:1.19" />
+        <element id="library" level="project" name="com.sun.jersey:jersey-json:1.19" />
+        <element id="library" level="project" name="javax.websocket:javax.websocket-client-api:1.1" />
+        <element id="library" level="project" name="org.glassfish.tyrus.bundles:tyrus-standalone-client:1.11" />
+      </element>
+    </root>
+  </artifact>
+</component>

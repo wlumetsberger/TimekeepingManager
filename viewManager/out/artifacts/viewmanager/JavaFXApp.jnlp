@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>viewmanager</title>
+    <vendor>Unknown vendor</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="28399" download="eager" />
+    <jar href="activation-1.1.jar" size="62983" download="eager" />
+    <jar href="hamcrest-core-1.1.jar" size="76643" download="eager" />
+    <jar href="jackson-core-asl-1.9.2.jar" size="228286" download="eager" />
+    <jar href="jackson-jaxrs-1.9.2.jar" size="18323" download="eager" />
+    <jar href="jackson-mapper-asl-1.9.2.jar" size="765648" download="eager" />
+    <jar href="jackson-xc-1.9.2.jar" size="27075" download="eager" />
+    <jar href="javax.websocket-client-api-1.1.jar" size="27070" download="eager" />
+    <jar href="jaxb-api-2.2.2.jar" size="105134" download="eager" />
+    <jar href="jaxb-impl-2.2.3-1.jar" size="890168" download="eager" />
+    <jar href="jersey-client-1.19.jar" size="134021" download="eager" />
+    <jar href="jersey-core-1.19.jar" size="436689" download="eager" />
+    <jar href="jersey-json-1.19.jar" size="165345" download="eager" />
+    <jar href="jettison-1.1.jar" size="67758" download="eager" />
+    <jar href="json-simple-1.1.1.jar" size="23931" download="eager" />
+    <jar href="jsr311-api-1.1.1.jar" size="46367" download="eager" />
+    <jar href="junit-4.10.jar" size="253160" download="eager" />
+    <jar href="osgi_R4_core-1.0.jar" size="444838" download="eager" />
+    <jar href="stax-api-1.0-2.jar" size="23346" download="eager" />
+    <jar href="tyrus-standalone-client-1.11.jar" size="2036832" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="Main"  name="viewmanager" />
+  <update check="background"/>
+</jnlp>

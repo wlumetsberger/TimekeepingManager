@@ -1,32 +1,29 @@
-package at.wlumetsberger.timekeeperWebservice.models;
+package at.wlumetsberger.viewManager;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Wolfgang on 27.07.2015.
  */
-@Entity
-@Table(name = "race")
+@XmlRootElement
 public class Race implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long id;
 
-    @NotNull
+
     private String name;
 
-    @NotNull
+
     private String ort;
 
-    @NotNull
-    private LocalDate date;
 
-    @OneToMany
+    private Date date;
+
+
     private List<Person> persons;
 
     private boolean running;
@@ -35,7 +32,7 @@ public class Race implements Serializable {
         super();
     }
 
-    public Race(String name, String ort, LocalDate date){
+    public Race(String name, String ort, Date date){
         this.date = date;
         this.name = name;
         this.ort = ort;
@@ -43,7 +40,7 @@ public class Race implements Serializable {
 
     @Override
     public String toString() {
-        return "Race{" +
+        return "at.wlumetsberger.viewManager.Race{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", ort='" + ort + '\'' +
@@ -69,11 +66,11 @@ public class Race implements Serializable {
         this.ort = ort;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

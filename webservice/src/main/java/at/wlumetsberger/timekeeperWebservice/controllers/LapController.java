@@ -26,9 +26,6 @@ public class LapController {
     PersonDao personDao;
 
     @Autowired
-    TagDao tagDao;
-
-    @Autowired
     LapResultDao resultDao;
 
     @RequestMapping("/lap/insert")
@@ -39,18 +36,13 @@ public class LapController {
             return false;
         }
         Race r = raceDao.findOne(raceId);
-        if(r == null ){
-            System.out.println("race not found: "+ raceId);
+        if(r == null ) {
+            System.out.println("race not found: " + raceId);
             return false;
         }
-        Tag t = tagDao.findOne(tagId);
-        if(t == null){
-            System.out.println("tag not found: "+ tagId);
-            return false;
-        }
-        Person p = personDao.findByTagAndRace(t,r);
+        Person p = personDao.findByTagIdAndRace(tagId,r);
         if(p == null){
-            System.out.println("Person not found: Tag: "+ t + " / Race: "+ r);
+            System.out.println("Person not found: Tag: "+ tagId + " / Race: "+ r);
             return false;
         }
         Lap l = new Lap(p);
@@ -67,6 +59,17 @@ public class LapController {
         }
         return lapDao.findByPerson(p);
     }
+    @RequestMapping("/lap/getLapCount")
+    @ResponseBody
+    public int getLapCount(long personId){
+        Person p = personDao.findOne(personId);
+        if(p == null){
+            System.out.println("cannot find Person with id: "+ personId);
+            return 0;
+        }
+        return lapDao.findByPerson(p).size();
+    }
+
     @RequestMapping("/lap/findAll")
     @ResponseBody
     public Iterable<Lap> findAll(){
@@ -95,10 +98,39 @@ public class LapController {
     @ResponseBody
     public List<LapResult> findWinner(long raceId, int starterGroup){
         try{
-          return resultDao.getResultByGroup(raceId,starterGroup);
+          return resultDao.getResultByGroup(raceId, starterGroup);
         }catch(Exception e){
             e.printStackTrace();
         }
         return null;
+    }
+    @RequestMapping("lap/getPositionByGroup")
+    @ResponseBody
+    public int getPositionByGroup(long personId){
+        Person p = personDao.findOne(personId);
+        List<LapResult> res = resultDao.getResultByGroup(p.getRace().getId(), p.getStarterGroup());
+        int i = 1;
+        for(LapResult r : res){
+            if(r.getPersonId()==(p.getId())){
+                return i;
+            }
+            i++;
+        }
+        return 0;
+    }
+
+    @RequestMapping("lap/getPosition")
+    @ResponseBody
+    public int getPosition(long personId){
+        Person p = personDao.findOne(personId);
+        List<LapResult> res = resultDao.getGeneralResult(p.getRace().getId());
+        int i = 1;
+        for(LapResult r : res){
+            if(r.getPersonId()==(p.getId())){
+                return i;
+            }
+            i++;
+        }
+        return 0;
     }
 }

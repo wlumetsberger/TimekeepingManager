@@ -11,4 +11,6 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface RaceDao extends CrudRepository<Race, Long> {
+
+    public Race findByRunning(boolean running);
 }

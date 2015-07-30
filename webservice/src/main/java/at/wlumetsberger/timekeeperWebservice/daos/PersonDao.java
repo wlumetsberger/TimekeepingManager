@@ -2,7 +2,6 @@ package at.wlumetsberger.timekeeperWebservice.daos;
 
 import at.wlumetsberger.timekeeperWebservice.models.Person;
 import at.wlumetsberger.timekeeperWebservice.models.Race;
-import at.wlumetsberger.timekeeperWebservice.models.Tag;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
@@ -13,7 +12,7 @@ import javax.transaction.Transactional;
 @Transactional
 public interface PersonDao extends CrudRepository<Person,Long> {
 
-    public Person findByTagAndRace(Tag t, Race r);
+    public Person findByTagIdAndRace(String tagId, Race r);
 
 }
 

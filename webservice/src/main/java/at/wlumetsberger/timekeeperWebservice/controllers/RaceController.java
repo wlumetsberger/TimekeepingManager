@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,6 +32,12 @@ public class RaceController {
             Logger.getLogger(RaceController.class.getName()).log(Level.SEVERE, "Error creating the race: " , ex);
         }
         return raceDao.findOne(race.getId());
+    }
+
+    @RequestMapping("race/getActive")
+    @ResponseBody
+    public Race getActiveRace(){
+        return raceDao.findByRunning(true);
     }
 
     @RequestMapping("race/get")

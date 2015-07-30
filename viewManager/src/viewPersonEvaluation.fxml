@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="myPane" alignment="center" hgap="10" prefHeight="660.0" prefWidth="994.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewPersonEvaluation">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="660.0" prefWidth="1147.0">
+         <children>
+            <Label layoutX="28.0" layoutY="139.0" prefHeight="35.0" prefWidth="231.0" text="Name:" />
+            <TextField fx:id="name_text" editable="false" layoutX="268.0" layoutY="131.0" prefHeight="51.0" prefWidth="712.0" />
+            <TextField fx:id="startnummer_text" editable="false" layoutX="268.0" layoutY="204.0" prefHeight="51.0" prefWidth="712.0" />
+            <Label layoutX="28.0" layoutY="212.0" prefHeight="35.0" prefWidth="231.0" text="Startnummer" />
+            <TextField fx:id="position_text" editable="false" layoutX="265.0" layoutY="289.0" prefHeight="51.0" prefWidth="712.0" />
+            <Label layoutX="22.0" layoutY="297.0" prefHeight="35.0" prefWidth="231.0" text="Position" />
+            <Button fx:id="beenden" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#disconnectAction" prefHeight="51.0" prefWidth="169.0" text="zurück" />
+            <TextField fx:id="position_gruppe_text" editable="false" layoutX="263.0" layoutY="369.0" prefHeight="51.0" prefWidth="712.0" />
+            <Label layoutX="20.0" layoutY="377.0" prefHeight="35.0" prefWidth="231.0" text="Position Gruppe" />
+            <Label layoutX="281.0" layoutY="33.0" text="Rennen:" />
+            <TextField fx:id="raceId_text" editable="false" layoutX="419.0" layoutY="25.0" prefHeight="51.0" prefWidth="542.0" />
+            <Label layoutX="20.0" layoutY="442.0" prefHeight="35.0" prefWidth="231.0" text="Runden" />
+            <TextField fx:id="runden_text" editable="false" layoutX="263.0" layoutY="434.0" prefHeight="51.0" prefWidth="712.0" />
+            <Button layoutX="22.0" layoutY="76.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="169.0" text="neu auslesen" onAction="#renewAction" />
+         </children></Pane>
+    </children>
+</GridPane>

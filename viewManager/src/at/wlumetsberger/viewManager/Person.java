@@ -1,30 +1,20 @@
-package at.wlumetsberger.timekeeperWebservice.models;
+package at.wlumetsberger.viewManager;
 
-import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Wolfgang on 27.07.2015.
  */
-@Entity
-@Table(name="person")
+@XmlRootElement
 public class Person implements Serializable{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private long id;
-
-    @ManyToOne
     private Race race;
-
-
     private String tagId;
-
-    @OneToMany
     private List<Lap> laps;
-
-
     private String name;
     private String club;
     private int number;
